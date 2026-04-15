@@ -30,7 +30,7 @@ Assuming we have a simple SISAL programme that takes in an integer value N and p
 % Tells the compiler this is the only exposed function
 define Main
 
-% Define the array ahead of time
+% Define a custom type
 type IntArray = array [integer]; % use real for floats
 
 function square(x: integer returns integer)
