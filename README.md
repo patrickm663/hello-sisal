@@ -1,5 +1,5 @@
 # Hello, SISAL
-This is my first foray into SISAL, an old forgotten scientific computing language out of the Lawrence Livermore National Laboratory circa 1988. It feels like a precursor to something like Julia.
+This is my first foray into SISAL (Streams and Iteration in a Single Assignment Language), an old forgotten scientific computing language out of the Lawrence Livermore National Laboratory circa 1985. It feels like a precursor to something like Julia.
 
 For more info and further reading, refer to https://kestrel.nmt.edu/~raymond/software/sisal/sisal.xhtml
 
