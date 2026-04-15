@@ -4,7 +4,7 @@ This is my first foray into SISAL (Streams and Iteration in a Single Assignment 
 For more info and further reading, refer to https://kestrel.nmt.edu/~raymond/software/sisal/sisal.xhtml
 
 ## Installing SISAL
-The below assumes a UNIX environment. Documentation is scarce, YMMV (thanks Gemini for the help here!)
+The below assumes a UNIX environment. Documentation is scarce, YMMV
 
 1. Download the tarball for SISAL from Sourceforge: https://sourceforge.net/projects/sisal/
 2. Extract the tarball and enter the directory:
@@ -12,7 +12,7 @@ The below assumes a UNIX environment. Documentation is scarce, YMMV (thanks Gemi
 tar xvfz sisal-14.1.0.tgz
 cd sisal-14.1.0
 ```
-3. Run `./configure` with a number of flags to get your C compiler into the GNU89 standard:
+3. Run `./configure`. If neccessary, include the flags below to get your C compiler into the GNU89 standard:
 ```sh
 ./configure CFLAGS="-g -O2 -fcommon -std=gnu89 -Wno-int-conversion -Wno-implicit-function-declaration -Wno-implicit-int" LIBS="-lm"
 ```
@@ -126,7 +126,7 @@ In file included from squares.c:11:
   196 |   fprintf( stderr, "  Phys: 0x%x (%d)\n",Array->Phys,Array->Phys);
       |                               ~^         ~~~~~~~~~~~
 ```
-While it is tempting to run `./squares 10`, it will not accept standard command line arguments like a modern C or Python script. Because Sisal was built for continuous dataflow processing on mainframes, it explicitly listens for Standard Input (`stdin`). 
+While it is tempting to run `./squares 10`, it will not accept standard command line arguments like a modern C or Python script. Because SISAL was built for continuous dataflow processing on mainframes, it explicitly listens for `stdin`. 
 ```
 $ ./squares 10
 x86_64-unknown-linux-gnu SISAL 1.2 (PThreads) ?.?
