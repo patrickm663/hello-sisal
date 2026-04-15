@@ -92,39 +92,6 @@ In file included from squares.c:11:
       |                              ~^    ~~~~~~~~~~~~
       |                               |         |
       |                               int       LOCK_TYPE {aka pthread_mutex_t}
-LL Parse, using binary files
-* Reading file: squares.sis...
-
-version 1.8       (Mar 28, 1989)
- **  9*   {returns}  x * x
- error
-
- accepted
-   16 lines in program
-    1 errors ( calls to corrector)
-    0 tokens inserted;    1 tokens deleted.
-    0 semantic errors
-In file included from squares.c:11:
-/usr/local/include/sisal/sisal.h: In function ‘ArrayDump’:
-/usr/local/include/sisal/sisal.h:193:31: warning: format ‘%x’ expects argument of type ‘unsigned int’, but argument 3 has type ‘struct Array *’ [-Wformat=]
-  193 |   fprintf( stderr, "Array: 0x%x (%d), sizeof: %d\n",Array,Array,sizeof(*Array));
-      |                              ~^                     ~~~~~
-      |                               |                     |
-      |                               unsigned int          struct Array *
-/usr/local/include/sisal/sisal.h:193:35: warning: format ‘%d’ expects argument of type ‘int’, but argument 4 has type ‘struct Array *’ [-Wformat=]
-  193 |   fprintf( stderr, "Array: 0x%x (%d), sizeof: %d\n",Array,Array,sizeof(*Array));
-      |                                  ~^                       ~~~~~
-      |                                   |                       |
-      |                                   int                     struct Array *
-/usr/local/include/sisal/sisal.h:193:48: warning: format ‘%d’ expects argument of type ‘int’, but argument 5 has type ‘long unsigned int’ [-Wformat=]
-  193 |   fprintf( stderr, "Array: 0x%x (%d), sizeof: %d\n",Array,Array,sizeof(*Array));
-      |                                               ~^                ~~~~~~~~~~~~~~
-      |                                                |                |
-      |                                                int              long unsigned int
-      |                                               %ld
-/usr/local/include/sisal/sisal.h:196:32: warning: format ‘%x’ expects argument of type ‘unsigned int’, but argument 3 has type ‘struct ArrayPhys *’ [-Wformat=]
-  196 |   fprintf( stderr, "  Phys: 0x%x (%d)\n",Array->Phys,Array->Phys);
-      |                               ~^         ~~~~~~~~~~~
 ```
 While it is tempting to run `./squares 10`, it will not accept standard command line arguments like a modern C or Python script. Because SISAL was built for continuous dataflow processing on mainframes, it explicitly listens for `stdin`. 
 ```
