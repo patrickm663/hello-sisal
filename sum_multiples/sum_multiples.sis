@@ -1,0 +1,23 @@
+% Finds the sum of multiples of 3 and 5 up to N
+define Main
+
+function Is_Multiple(a, b, n: integer returns boolean)
+  (mod(n, a) = 0) | (mod(n, b) = 0) 
+end function
+
+function Main(N: integer returns double_real) % double_real is closest to Big
+  let
+    a := 3;
+    b := 5;
+  in
+
+   for i in 1, N
+    c := if Is_Multiple(a, b, i) then
+	      double_real(i)
+	  else
+	      double_real(0)
+	  end if
+    returns value of sum c
+    end for
+  end let
+end function

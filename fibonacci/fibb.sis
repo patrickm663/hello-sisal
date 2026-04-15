@@ -1,0 +1,30 @@
+% Calculates the Nth Fibonacci number
+
+define Main
+
+function Fibonacci(N: integer returns double_real)
+  % Starting values
+  for initial
+    step := 1;
+    prev := double_real(0);
+    curr := double_real(1);
+
+  % Increment up until N
+  while step < N repeat
+    % Reference old values
+    step := old step + 1;
+    prev := old curr;
+    curr := old prev + old curr;
+
+  % Get the final state
+  returns value of curr
+  end for
+end function
+
+function Main(N: integer returns double_real)
+  if N <= 0 then
+    double_real(0)
+  else
+    Fibonacci(N)
+  end if
+end function

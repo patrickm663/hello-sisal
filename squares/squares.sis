@@ -1,0 +1,16 @@
+% Generate an array of squares
+% Tells the compiler this is the only exposed function
+define Main
+
+% Define the array ahead of time
+type IntArray = array [integer]; % use real for floats
+
+function square(x: integer returns integer)
+  x * x
+end function
+
+function Main(N: integer returns IntArray)
+  for i in 1, N
+    returns array of square(i)
+  end for
+end function
