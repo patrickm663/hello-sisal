@@ -23,6 +23,15 @@ sudo make install
 ```
 5. You can safely exit the directory and set up camp elsewhere.
 
+### A Note on `CFLAGS`
+Given how old the project is, the following `CFLAGS` need to be passed:
+- `-std=gnu89` : the code uses pre-C99 constructs; function declarations without return types, implicit int, K&R style in places
+- `-fcommon` : relies on tentative definitions for global variables, which GCC 10+ made an error by default
+- `-Wno-int-conversion` : casting between pointers and integers without explicit casts, common in 1990s C
+- `-Wno-implicit-function-declaration` : calling functions before declaring them, also pre-C99 practice
+- `-Wno-implicit-int` : functions with no declared return type, defaulting to int
+- `LIBS="-lm"` : the `configure` script doesn't automatically detect the math library dependency on your system
+
 ## Compiling and Running SISAL
 Assuming we have a simple SISAL programme that takes in an integer value N and prints to screen the squares from 1 to N, it first needs to be compiled and then run:
 ```sisal
